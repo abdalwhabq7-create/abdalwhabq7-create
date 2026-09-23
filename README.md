@@ -1,33 +1,27 @@
-### Data tools that report their own cost
+### Data tools for catalogs, monitoring and document workflows
 
-I build small, single-purpose scrapers. Each one does a single job on public
-data, and every run publishes what it actually cost to produce a thousand rows.
+I build hosted Apify Actors for public data extraction and structured-data checks.
 
-**Live on the Apify Store →** [apify.com/abdulwhab95](https://apify.com/abdulwhab95)
+**[Explore all 24 tools and working Python examples](https://github.com/abdalwhabq7-create/apify-actor-examples)**
 
----
+**[متصفح الأدوات بالعربي](https://github.com/abdalwhabq7-create/apify-actor-examples/blob/main/README.ar.md)** · **[Run on Apify](https://apify.com/abdulwhab95)**
 
-#### How I pick what to build
-
-Four checks, in the order that kills a bad target fastest:
-
-| | |
+| Your task | Examples |
 |---|---|
-| **`robots.txt`** | against the exact path, not the homepage |
-| **Terms of use** | a site can permit a path in robots and forbid bots in its terms — the terms win |
-| **Reachability** | if it needs a browser and a proxy pool, the margin is usually already gone |
-| **Unit economics** | cost per 1,000 rows measured on a real run, before publishing, not after |
+| Product catalogs and prices | Salla, Shopify, Zid, YouCan, WooCommerce |
+| Business opportunities | Mostaql projects, public job boards, building permits, World Bank tenders |
+| Web and documents | Markdown, RSS, PDF text and tables, SEO and JSON-LD audits, static screenshots |
+| Data quality | Catalog validation and snapshot comparison |
+| Developer and research monitoring | GitHub releases, npm packages, Hacker News, Crossref, World Bank indicators |
 
-Anything ambiguous gets dropped. There are millions of targets and no reason
-to spend judgment on a doubtful one.
+Each example page includes a small input, an excerpt from an actual run, its
+verification date, supported behavior and limitations. Hosted Actors are paid;
+current pricing is on their Apify Store pages. The example client code is public,
+while Actor implementations remain private.
 
-#### What the tools guarantee
-
-- **Public data only.** `robots.txt` is read before anything else is fetched.
-- **A stable shape.** Every field is always present; missing values are `null`,
-  never omitted. Nothing downstream breaks on a quiet schema change.
-- **A number, not a claim.** Each run writes cost, reach rate, and a
-  publish/reject verdict to its own report.
+Source availability, rate limits, licenses and fields vary. Monitoring requires
+repeat runs and appropriate saved state; a successful example is not a promise
+of complete coverage or permanent availability.
 
 #### Background
 
